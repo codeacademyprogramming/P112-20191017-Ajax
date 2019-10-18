@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AjaxPractice.Models.Todo>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div id="todo-list" class="row" data-offset-count="12">
+    @foreach (var todo in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body @(todo.Completed ? "bg-info" : "bg-warning")">
+                    <h5 class="card-title">@todo.Title</h5>
+                    <h6 class="card-subtitle mb-2">@todo.Id</h6>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @*<div class="col-md-12 d-flex justify-content-center mt-4">
+        <button id="load-more" class="btn btn-outline-primary ">Load More</button>
+    </div>*@
+</div>
